@@ -2,12 +2,13 @@
     <div class="space-y-10">
         <section class="text-center pt-10">
             <h1 class="text-4xl font-bold">Let's Find Your Dream Job</h1>
-            <form action="" method="get">
-                <input type="text" name="search" id="search" placeholder="Web Developer..."
-                    class="w-full max-w-xl mt-6 px-5 py-4 rounded-xl bg-white/5 border-white/10">
-            </form>
+
+            <x-forms.form  action="/search">
+                <x-forms.input :label="false" name="q" placeholder="Web Developer..."
+                    class="bg-white/5 border-white/10 mt-6" />
+            </x-forms.form>
         </section>
-        <section class="pt-20">
+        <section class="pt-10">
             <x-section-heading>Featured Jobs</x-section-heading>
             <div class="grid grid-cols-3 gap-8 mt-6">
                 @foreach ($featuredJobs as $job)
