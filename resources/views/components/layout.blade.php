@@ -30,18 +30,23 @@
                 <a href="#">Companies</a>
             </div>
             @auth
-            <div class="space-x-6 font-bold">
-                <a href="jobs/create">Post Job</a>
-                <a href="/logout" class="text-red-500 ">Log Out</a>
-            </div>
+                <div class="space-x-6 font-bold">
+             
+                    <form action="/logout" method="post">
+                        @csrf
+                        @method('POST')
+                        <a href="jobs/create">Post Job</a>
+                        <button class="text-red-400 ml-4" href="/logout" type="submit">Log Out</button>
+                    </form>
+                </div>
             @endauth
-        @guest
-        <div class="space-x-6 font-bold">
-            <a href="/register">Sign Up</a>
-            <a href="/login">Log In</a>
-       
-        </div>
-        @endguest
+            @guest
+                <div class="space-x-6 font-bold">
+                    <a href="/register">Sign Up</a>
+                    <a href="/login">Log In</a>
+
+                </div>
+            @endguest
         </nav>
 
 

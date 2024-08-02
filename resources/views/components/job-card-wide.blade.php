@@ -2,13 +2,15 @@
 <x-panel class="flex flex-row justify-between">
     <div class="flex flex-row">
         <div>
-            <x-employer-logo :width="90"></x-employer-logo>
+            <x-employer-logo :employer="$job->employer" :width="90"></x-employer-logo>
         </div>
         <div class="flex flex-col px-4 justify-between">
             <div class="text-start text-sm text-gray-400 ">{{$job->employer->name}}</div>
 
             <h3 class="text-2xl font-bold mb-4 mt-2 group-hover:text-blue-600 transition-colors duration-300">
-     {{$job->title}}
+                <a href="{{$job->url}}" target="_blank ">
+                    {{ $job->title }}
+                </a>
             </h3>
             <p class="text-sm  text-gray-400">
                 {{$job->schedule}}  - {{$job->salary}}
