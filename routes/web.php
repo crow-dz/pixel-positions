@@ -9,6 +9,12 @@ use App\Http\Controllers\TagController;
 
 Route::get('/', [JobController::class, 'index']);
 
+Route::get('/jobs/create', [JobController::class, 'create']);
+
+Route::post('/jobs', [JobController::class, 'store']);
+
+
+
 Route::get('/search', SearchController::class);
 
 Route::get('/tags/{tag:name}', TagController::class);
